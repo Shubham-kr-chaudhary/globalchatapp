@@ -15,7 +15,7 @@ function App() {
   const messagesEndRef = useRef(null);
   const messageInputRef = useRef(null);
 
-  // Load previous messages
+
   useEffect(() => {
     const loadMessages = async () => {
       try {
@@ -29,7 +29,7 @@ function App() {
     loadMessages();
   }, []);
 
-  // Listen for socket messages
+
   useEffect(() => {
     const handleMessage = (message) => {
       setMessages((prev) => [...prev, message]);
@@ -42,7 +42,7 @@ function App() {
     };
   }, []);
 
-  // Auto scroll
+ 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
       behavior: "smooth",

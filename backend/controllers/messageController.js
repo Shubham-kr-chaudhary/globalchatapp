@@ -1,7 +1,7 @@
 const Message = require("../models/Message");
 const { getIO } = require("../socket/socket");
 
-// GET /messages
+
 const getMessages = async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: 1 });
@@ -15,7 +15,6 @@ const getMessages = async (req, res) => {
   }
 };
 
-// POST /messages
 const sendMessage = async (req, res) => {
   try {
     const { username, text } = req.body;

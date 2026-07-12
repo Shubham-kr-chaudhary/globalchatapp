@@ -9,11 +9,9 @@ const app = express();
 
 connectDB();
 
-// Middleware FIRST
 app.use(cors());
 app.use(express.json());
 
-// THEN routes
 app.use("/messages", messageRoutes);
 
 app.get("/", (req, res) => {
